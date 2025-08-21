@@ -27,6 +27,11 @@ def main():
         screen.fill("black")
 
         updatable.update(dt)
+        for obj in asteroids:
+            if obj.check_collision(player):
+                print("Game over")
+                pygame.quit()
+                return
         for obj in drawable:
             obj.draw(screen)
 
